@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-commerce website</title>
+    <!-- css cdn-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!--java script cdn-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+      </script>
+
+    <!-- font awesome cdn-->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<style>
+  .carousel-item{
+    position: relative;
+  }
+
+  .carousal-text{
+    position: absolute;
+    top: 50%;  /* adjust vertical position*/
+    left: 50%;  /*center horizontally */
+
+    transform: translate(-50%, -50%);
+    color: rgb(5,5,6); /*make text visible*/
+    text-align: center;
+    padding: 15px 20px;
+  }
+  .card{
+    position: relative;
+  }
+  .heart-icon{
+    position: absolute;
+    top: 10px;  /* adjust vertical position*/
+    right:10px; /* adjust horizontal position*/
+    width:60px; /* size of the heart*/
+    cursor: pointer;
+  }
+  .section-title {
+    position: relative;
+    padding-left: 20px; /* space for the red line */
+}
+
+.section-title::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 5px;
+    width: 4px;      /* thickness of red line */
+    height: 25px;    /* height of red line */
+    background: red; /* color of line */
+    border-radius: 2px;
+}
+
+</style>
+<body>
+<!--navbar-->
+<section>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+        <img src="images/shopping-bag-icon.png" class="img-fluid" alt="...">
+    ATTIRE
+</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#home">HOME</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="#collection">COLLECTION</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link active" href="#specials">SPECIALS</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="#blogs">BLOGS</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="#about us">ABOUT US</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="#popular">POPULAR</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="contact.html"><i class="fa fa-envelope"></i></a>
+        </li>
+        <!--logo heart, cart-->
+        <li class="nav-item">
+          <a class="nav-link active" href="#"> <i class="fa-solid fa-heart"></i></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="#"><i class="fa-solid fa-cart-arrow-down"></i></a>
+        </li>
+
+      </ul>
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+</section>
+
+    <!--images-->
+    <!--carousal-->
+    <section id="home">
+        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="images/banner-img-1.jpg" class="d-block w-100" alt="...">
+      <div class="carousal-text">
+        <h2 style="color: white;font-size: larger;">Best Collection</h2>
+        <h1 style="color: white;font-family: serif;">NEW ARRIVALS</h1>
+        
+        
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="images/offer_img.jpg" class="d-block w-100" alt="...">
+      <div class="carousal-text">
+        <h2 style="color: white; font-size: larger;">Best Price & Offer</h2>
+        <h1 style="color: white; font-family: cursive;">NEW SEASON</h1>
+
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="images/banner-img-1.jpg" class="d-block w-100" alt="...">
+      <div class="carousal-text">
+        <h2 style="color: white; font-size: larger;">Best Collection</h2>
+        <h1 style="color: white; font-family: serif;">NEW FEATURED</h1>
+
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+    </section>
+    <br><br><br>
+
+
+<!--new collection-->
+    <section id="collection">
+        <div class="container">
+  <div class="row">
+
+    <div class="tittle text-center">
+        <h2 class="position-relative d-inline-block section-title">NEW COLLECTION</h2>
+    </div>
+    </div>
+    <div class="row">
+        <div class="text-center">
+    <button type="button" class="btn btn-danger">All</button>
+    <button type="button" class="btn btn-danger">Best Sellers</button>
+    <button type="button" class="btn btn-danger">Featured</button>
+    <button type="button" class="btn btn-danger">New Arrival</button>
+    </div>
+    </div>
+<br><br><br>
+    <div class="row">
+
+        <div class="col"></div>
+        <div class="col"><div class="card" style="width: 18rem;">
+  <img src="images/c_formal_gray_shirt.png" class="card-img-top" alt="...">
+  <img src="images/sales-png-9.png" class="heart-icon" alt="heart">
+
+  <div class="card-body">
+    <p class="card-text text-center fw-bold">Grey printed shirt <br>
+    $45.50</p>
+  </div>
+</div>
+</div>
+        <div class="col"><div class="card" style="width: 18rem;">
+  <img src="images/c_pant_girl.png" class="card-img-top" alt="...">
+  <img src="images/sales-png-9.png" class="heart-icon" alt="heart">
+  <div class="card-body">
+    <p class="card-text text-center fw-bold">Blue jeans <br>
+    $45.50</p>
+  </div>
+</div>
+</div>
+        <div class="col"><div class="card" style="width: 18rem;">
+  <img src="images/c_polo-shirt.png" class="card-img-top" alt="...">
+  <img src="images/sales-png-9.png" class="heart-icon" alt="heart">
+  <div class="card-body">
+    <p class="card-text text-center fw-bold">Beige shirt <br>
+    $45.50</p>
+  </div>
+</div>
+</div>
+        <div class="col"></div>
+        </div>
+        <br>
+        <div class="row">
+
+        <div class="col"></div>
+        <div class="col"><div class="card" style="width: 18rem;">
+  <img src="images/c_western-shirt.png" class="card-img-top" alt="...">
+  <img src="images/sales-png-9.png" class="heart-icon" alt="heart">
+  <div class="card-body">
+    <p class="card-text text-center fw-bold">Black top <br>
+    $45.50</p>
+  </div>
+</div>
+</div>
+        <div class="col"><div class="card" style="width: 18rem;">
+  <img src="images/c_shirt-girl.png" class="card-img-top" alt="...">
+  <img src="images/sales-png-9.png" class="heart-icon" alt="heart">
+  <div class="card-body">
+    <p class="card-text text-center fw-bold">Light blue shirt <br>
+    $45.50</p>
+  </div>
+</div>
+</div>
+        <div class="col"><div class="card" style="width: 18rem;">
+  <img src="images/c_undershirt.png" class="card-img-top" alt="...">
+  <img src="images/sales-png-9.png" class="heart-icon" alt="heart">
+  <div class="card-body">
+    <p class="card-text text-center fw-bold">Navy blue top <br>
+    $45.50</p>
+  </div>
+</div>
+</div>
+        <div class="col"></div>
+        </div>
+        <br>
+        <div class="row">
+
+        <div class="col"></div>
+        <div class="col"><div class="card" style="width: 18rem;">
+  <img src="images/c_tunic-shirt_girl.png" class="card-img-top" alt="...">
+  <img src="images/sales-png-9.png" class="heart-icon" alt="heart">
+  <div class="card-body">
+    <p class="card-text text-center fw-bold">button-down shirt <br>
+    $45.50</p>
+  </div>
+</div>
+</div>
+        <div class="col"><div class="card" style="width: 18rem;">
+  <img src="images/c_t-shirt_men.png" class="card-img-top" alt="...">
+  <img src="images/sales-png-9.png" class="heart-icon" alt="heart">
+  <div class="card-body">
+    <p class="card-text text-center fw-bold">Navy long-sleeve top <br>
+    $45.50</p>
+  </div>
+</div>
+</div>
+    
+        <div class="col"></div>
+        </div>
+    </div>
+
+    </section>
+    <br><br>
+
+
+    <!--special collection-->
+      <section id="specials">  
+    <div class="container">
+
+  <div class="row">  
+<div class="col"></div>  
+    <div class="tittle text-center">  
+        <h2 class="position-relative d-inline-block section-title">Special Collection</h2>  
+    </div>
+    </div>  
+<br><br><br><br>  
+    <div class="row">  <div class="col"></div>  
+
+    <div class="col"><div class="card" style="width: 18rem;">
+
+  <img src="images/special_product_1.jpg" class="card-img-top" alt="...">  
+  <i class="fa-solid fa-heart"   
+     style="  
+        color: red;  
+        font-size: 20px;  
+        position: absolute;  
+        top: 10px;  
+        right: 10px;  
+     ">  
+  </i>  
+  <div class="card-body">  
+    <h5 class="card-title">White Top + Brown Pants Outfit </h5>  
+    <p class="card-text">Top Name: Snowfall Ribbed Winter Top <br>
+Pant Name: Mocha Wide-Leg Trousers</p>  
+    <a href="#" class="btn btn-primary">Add to cart</a>  
+  </div>  
+</div>  
+</div>  
+        <div class="col"><div class="card" style="width: 18rem;">  
+  <img src="images/special_product_2.jpg" class="card-img-top" alt="...">  
+  <i class="fa-solid fa-heart"   
+     style="  
+        color: red;  
+        font-size: 20px;  
+        position: absolute;  
+        top: 10px;  
+        right: 10px;  
+     ">  
+  </i>  
+  <div class="card-body">  
+    <h5 class="card-title">Maroon Long Dress + Black Bottoms</h5>  
+    <p class="card-text">Dress Name: Crimson Grace Maxi Kurti <br>
+Bottom Name: Midnight Classic Leggings</p>  
+    <a href="#" class="btn btn-primary">Add to cart</a>  
+  </div>  
+</div>  
+</div>  
+        <div class="col"><div class="card" style="width: 18rem;">  
+  <img src="images/special_product_3.jpg" class="card-img-top" alt="...">  
+  <i class="fa-solid fa-heart"   
+     style="  
+        color: red;  
+        font-size: 20px;  
+        position: absolute;  
+        top: 10px;  
+        right: 10px;  
+     ">  
+  </i>  
+  <div class="card-body">  
+    <h5 class="card-title">Denim Jacket + White Top + Olive Pants</h5>  
+    <p class="card-text">Jacket Name: Royal Blue Street-Style Denim Jacket <br>
+Pant Name: Olive Breeze Culotte Pants</p>  
+    <a href="#" class="btn btn-primary">Add to cart</a>  
+  </div>  
+</div>  
+</div>  <div class="col"></div>  
+  </div>  
+
+    <br> 
+
+    <div class="row">  
+    <div class="col"></div>  
+
+    <div class="col"><div class="card" style="width: 18rem;">
+
+  <img src="images/special_product_4.jpg" class="card-img-top" alt="...">  
+<i class="fa-solid fa-heart"   
+     style="  
+        color: red;  
+        font-size: 20px;  
+        position: absolute;  
+        top: 10px;  
+        right: 10px;  
+     ">  
+  </i>  <div class="card-body">  
+    <h5 class="card-title">Midnight Striped A-Line Kurti Set</h5>  
+    <p class="card-text">A chic navy-blue striped kurti paired with a soft off-white flared bottom, perfect for everyday elegance and festive style</p>  
+    <a href="#" class="btn btn-primary">Add to cart</a>  
+  </div>  
+</div>  
+</div>  
+    </div>  
+    
+        </div> >
+</section>
+<br><br><br>
+
+<img src="images/offer_img.jpg" class="img-fluid" alt="...">
+<br><br><br>
+
+
+<!--latest blog-->
+<section id="blogs">
+    <div class="container">
+  <div class="row">
+<div class="col"></div>
+    <div class="tittle text-center">
+        <h2 class="position-relative d-inline-block section-title">Our Latest Blog</h2>
+    </div>
+<br><br><br>
+    <div class="row">
+        <div class="col"></div>
+
+        <div class="col"><div class="card" style="width: 18rem;">
+  <img src="images/blog_1.jpg" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">How online payments make shopping easier</h5>
+    <p class="card-text">Learn how digital payments are changing the way we shop <br>
+      and why they are safer and faster than ever.</p>
+    <a href="#" class="btn btn-primary">Read More</a>
+  </div>
+</div></div>
+
+        <div class="col"><div class="card" style="width: 18rem;">
+  <img src="images/blog_2.jpg" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Smart shopping tips to save more money</h5>
+    <p class="card-text">Discover smart ways to save money while shopping online like- discount tricks, deals, and price hacks!</p>
+    <a href="#" class="btn btn-primary">Read More</a>
+  </div>
+</div></div>
+
+        <div class="col"><div class="card" style="width: 18rem;">
+  <img src="images/blog_3.jpg" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Boost Your Productivity with Simple Tech Tricks</h5>
+    <p class="card-text">Easy laptop and mobile tricks that help you work faster, stay organized, and get more done every day.</p>
+    <a href="#" class="btn btn-primary">Read More</a>
+  </div>
+</div></div>
+
+        <div class="col"></div>
+
+    </div>
+
+
+    </div>
+    </div>
+    </section>
+    <br><br><br>
+
+
+    <!--about us-->
+<section id="about us">
+    
+      <div class="row justify-content-center">
+      <div class="col-md-10">
+        <div class="card mb-3 border-0" style="max-width: 100%;">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="images/about_us.jpg" class="img-fluid rounded-start" alt="...">
+    </div>
+
+    <div class="col-md-8">
+      <div class="card-body">
+        <h3 class="card-title section-title">About Us</h3>
+        <p class="card-text"><small class="text-muted">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sint, fugiat.</small></p>
+        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam totam aliquid cumque maxime similique dolore. Possimus expedita quas magni reiciendis, distinctio reprehenderit fugiat recusandae cum provident, pariatur sint nesciunt error..</p>
+      </div>
+    </div>
+  </div>
+</div>
+      </div>
+    </div>
+    
+    
+
+  </section>
+
+<br><br>
+
+
+<!-- popular of this year -->
+<section id="popular">
+
+  <div class="container">
+    <div class="row">
+      <div class="text-center">
+        <h2 class="position-relative d-inline-block section-title">Popular Of The Year</h2>
+      </div>
+    </div>
+  </div>
+  <br>
+
+
+  <div class="container text-center">
+    <div class="row">
+      <div class="col">
+        <b>Top Rated</b>
+      </div>
+      <div class="col">
+        <b>Best Selling</b>
+      </div>
+      <div class="col">
+        <b>On Sale</b>
+      </div>
+    </div>
+  </div><br>
+
+
+  <div class="container text-center">
+  <div class="row">
+    <div class="col">
+      <div class="card mb-3" style="max-width: 540px;">
+  <div class="row g-0">
+    <div class="col-md-2">
+      <img src="images/top_rated_1.jpg" class="img-fluid rounded-start" alt="...">
+    </div>
+    <div class="col-md-4">
+      <div class="card-body">
+        
+        <p class="card-text">Sky-Blue Shirt <br>
+        $ 20.00</p>
+        
+      </div>
+    </div>
+  </div>
+</div>
+    </div>
+    <div class="col">
+      <div class="card mb-3" style="max-width: 540px;">
+  <div class="row g-0">
+    <div class="col-md-2">
+      <img src="images/top_rated_2.jpg" class="img-fluid rounded-start" alt="...">
+    </div>
+    <div class="col-md-4">
+      <div class="card-body">
+       
+        <p class="card-text">Smart Watch <br>
+        $ 20.00</p>
+      
+      </div>
+    </div>
+  </div>
+</div>
+    </div>
+    <div class="col">
+      <div class="card mb-3" style="max-width: 540px;">
+  <div class="row g-0">
+    <div class="col-md-2">
+      <img src="images/top_rated_3.jpg" class="img-fluid rounded-start" alt="...">
+    </div>
+    <div class="col-md-4">
+      <div class="card-body">
+       
+        <p class="card-text">Red Hoodie <br>
+        $ 20.00</p>
+       </div>
+    </div>
+  </div>
+</div>
+    </div>
+  </div>
+
+  <!--2nd row-->
+
+  <div class="row">
+    <div class="col">
+      <div class="card mb-3" style="max-width: 540px;">
+  <div class="row g-0">
+    <div class="col-md-2">
+      <img src="images/on_sale_1.jpg" class="img-fluid rounded-start" alt="...">
+    </div>
+    <div class="col-md-4">
+      <div class="card-body">
+        
+        <p class="card-text">Ladies Purse <br>
+        $ 20.00</p>
+        
+      </div>
+    </div>
+  </div>
+</div>
+    </div>
+    <div class="col">
+      <div class="card mb-3" style="max-width: 540px;">
+  <div class="row g-0">
+    <div class="col-md-2">
+      <img src="images/on_sale_2.jpg" class="img-fluid rounded-start" alt="...">
+    </div>
+    <div class="col-md-4">
+      <div class="card-body">
+       
+        <p class="card-text">Navy-Blue Shirt <br>
+        $ 20.00</p>
+      
+      </div>
+    </div>
+  </div>
+</div>
+    </div>
+    <div class="col">
+      <div class="card mb-3" style="max-width: 540px;">
+  <div class="row g-0">
+    <div class="col-md-2">
+      <img src="images/on_sale_3.jpg" class="img-fluid rounded-start" alt="...">
+    </div>
+    <div class="col-md-4">
+      <div class="card-body">
+       
+        <p class="card-text">Shoes <br>
+        $ 20.00</p>
+       </div>
+    </div>       
+  </div>
+</div>
+    </div>
+  </div>
+
+  <!--3rd row-->
+  <div class="row">
+    <div class="col">
+      <div class="card mb-3" style="max-width: 540px;">
+  <div class="row g-0">
+    <div class="col-md-2">
+      <img src="images/best_selling_1.jpg" class="img-fluid rounded-start" alt="...">
+    </div>
+    <div class="col-md-4">
+      <div class="card-body">
+        
+        <p class="card-text">Suit <br>
+        $ 20.00</p>
+        
+      </div>
+    </div>
+  </div>
+</div>
+    </div>
+    <div class="col">
+      <div class="card mb-3" style="max-width: 540px;">
+  <div class="row g-0">
+    <div class="col-md-2">
+      <img src="images/best_selling_2.jpg" class="img-fluid rounded-start" alt="...">
+    </div>
+    <div class="col-md-4">
+      <div class="card-body">
+       
+        <p class="card-text">Black Coat <br>
+        $ 20.00</p>
+      
+      </div>
+    </div>
+  </div>
+</div>
+    </div>
+    <div class="col">
+      <div class="card mb-3" style="max-width: 540px;">
+  <div class="row g-0">
+    <div class="col-md-2">
+      <img src="images/best_selling_3.jpg" class="img-fluid rounded-start" alt="...">
+    </div>
+    <div class="col-md-4">
+      <div class="card-body">
+       
+        <p class="card-text">Grey Shirt <br>
+        $ 20.00</p>
+       </div>
+    </div>
+  </div>
+</div>
+    </div>
+  </div>
+</div>
+</section>
+
+
+  <!--navbar-->
+
+<div class="container my-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+
+      <form class="d-flex bg-white p-2 rounded-pill shadow-sm"style="border: 2px solid #e5e5e5;">
+        <input type="email" class="form-control border-0 rounded-pill"
+               placeholder="Enter Your Email...">
+        
+        <button class="btn btn-danger rounded-pill ms-2 px-4" type="submit">
+          Subscribe
+        </button>
+      </form>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<!--footer-->
+<section class="bg-dark text-white">
+  <div class="container">
+  <div class="row">
+    <div class="col">
+  <h2>ATTIRE</h2>
+  <p style="color: #ccc;">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur, harum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, sequi?</p>
+    </div>
+
+    <!--links-->
+    <div class="col">
+      <h2>Links</h2>
+      <a href="" style="color: #ccc;text-decoration:none; transition:0.3s;"
+     onmouseover="this.style.color='blue'"
+     onmouseout="this.style.color='#ccc'">> Home</a><br>
+      <a href="" style="color: #ccc;text-decoration:none; transition:0.3s;"
+     onmouseover="this.style.color='blue'"
+     onmouseout="this.style.color='#ccc'">> Collection</a><br>
+      <a href="" style="color: #ccc;text-decoration:none; transition:0.3s;"
+     onmouseover="this.style.color='blue'"
+     onmouseout="this.style.color='#ccc'">> Blog</a><br>
+      <a href="" style="color: #ccc;text-decoration:none; transition:0.3s;"
+     onmouseover="this.style.color='blue'"
+     onmouseout="this.style.color='#ccc'">> About us</a><br>
+    </div>
+
+    <!--contact us-->
+
+
+    <div class="col" style="line-height: 32px; color:#ccc;">
+
+  <h2 style="color: white;">Contact Us</h2>
+
+  <i class="fa-solid fa-map-location-dot" style="width:20px;"></i>
+  Albert Street, New York,<br>
+  &nbsp;&nbsp;&nbsp;45710, United States<br><br>
+
+  <i class="fa-solid fa-envelope" style="width:20px;"></i>
+  attire.support@gmail.com<br><br>
+
+  <i class="fa-solid fa-phone" style="width:20px;"></i>
+  +97866776235
+
+</div>
+
+
+    <!--follow us-->
+    <div class="col">
+      <h2>Follow Us </h2>
+      <a href="https://www.facebook.com/" style="color: #ccc; text-decoration:none; transition:0.3s;"
+     onmouseover="this.style.color='blue'"
+     onmouseout="this.style.color='#ccc'">
+      <i class="fa-brands fa-facebook-f"></i></a>
+
+      <a href="https://x.com/i/flow/login?lang=es%20target%3D" style="color: #ccc; text-decoration:none; transition:0.3s;"
+     onmouseover="this.style.color='blue'"
+     onmouseout="this.style.color='#ccc'">
+      <i class="fa-brands fa-x-twitter"></i></a>
+
+      <a href="https://www.instagram.com/" style="color: #ccc; text-decoration:none; transition:0.3s;"
+     onmouseover="this.style.color='blue'"
+     onmouseout="this.style.color='#ccc'">
+      <i class="fa-brands fa-instagram"></i></a>
+
+      <a href="https://www.pinterest.com/" style="color: #ccc; text-decoration:none; transition:0.3s;"
+     onmouseover="this.style.color='blue'"
+     onmouseout="this.style.color='#ccc'">
+      <i class="fa-brands fa-pinterest"></i></a>
+
+      
+    </div>
+  </div>
+</div>
+</section>
+  
+</body>
+</html>
